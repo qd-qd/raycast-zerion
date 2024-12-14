@@ -31,8 +31,8 @@
     },
     {
       "name": "address-info",
-      "title": "Lookup Address",
-      "description": "View portfolio for address or domain",
+      "title": "Overview",
+      "description": "Overview a portofolio using an address or an ENS name",
       "mode": "view",
       "keywords": [
         "address",
@@ -79,21 +79,6 @@
       "description": "View your wallet's value in the menu bar",
       "mode": "menu-bar",
       "interval": "5m"
-    },
-    {
-      "name": "overview",
-      "title": "View Overview",
-      "subtitle": "Zerion",
-      "description": "Overview a portofolio using an address or an ENS name",
-      "mode": "no-view",
-      "arguments": [
-        {
-          "name": "account",
-          "placeholder": "Address or ENS",
-          "type": "text",
-          "required": true
-        }
-      ]
     },
     {
       "name": "collection",
