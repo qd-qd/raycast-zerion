@@ -52,29 +52,6 @@
       ]
     },
     {
-      "name": "address-rewards",
-      "title": "Wallet Rewards",
-      "description": "View Zerion Rewards Campaign for Wallet",
-      "mode": "view",
-      "keywords": [
-        "address",
-        "crypto",
-        "rewards",
-        "loyalty",
-        "zerion",
-        "level"
-      ],
-      "icon": "zerion_icon.png",
-      "arguments": [
-        {
-          "name": "account",
-          "placeholder": "Address or ENS",
-          "type": "text",
-          "required": true
-        }
-      ]
-    },
-    {
       "name": "find-token-or-address",
       "title": "Search Web3",
       "description": "Search any token, address or domain",

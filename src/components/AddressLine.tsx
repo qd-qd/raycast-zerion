@@ -14,7 +14,6 @@ import {
   Alert,
   launchCommand,
   LaunchType,
-  useNavigation,
 } from "@raycast/api";
 import {
   addAddress,
@@ -27,7 +26,6 @@ import {
 } from "../shared/utils";
 import { useWalletMetadata } from "../shared/useWalletMetadata";
 import { useWalletPortfolio } from "../shared/useWalletPortfolio";
-import { AddressRewardsView } from "./AddressRewardsView";
 import { normalizeAddress } from "../shared/NormalizedAddress";
 
 export function SafeAddressActions({
@@ -85,7 +83,6 @@ export function AddressLine({
   action?: React.ReactNode;
   onChangeSavedStatus(): void;
 }) {
-  const { push } = useNavigation();
   const normalizedAddress = normalizeAddress(address);
   const { data: menuBarAddress, revalidate: revalidateMenuBarAddress } = usePromise(getMenuBarAddress);
 
@@ -153,11 +150,6 @@ export function AddressLine({
             url={`https://app.zerion.io/${normalizedAddress}`}
             title="Open in Zerion Web App"
             icon={Icon.Globe}
-          />
-          <Action
-            onAction={() => push(<AddressRewardsView address={normalizedAddress} walletMeta={walletMetadata} />)}
-            title="Open Rewards"
-            icon={Icon.StarCircle}
           />
           {menuBarAddress === normalizedAddress ? (
             <Action
