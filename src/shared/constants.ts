@@ -7,4 +7,5 @@ export const ZERO_CHAIN_CONFIG: ChainInfo = {
   name: "ZERϴ",
   testnet: false,
 };
-export const MENU_BAR_ADDRESS_KEY = "menu-bar-address";
+export const MENU_BAR_ADDRESS_KEY = "zerion-menu-bar-address";
+export const ADDRESSES_KEY = "zerion-addresses";
