@@ -3,7 +3,7 @@ import { AggregatedPosition, Position } from "./types";
 import { ellipsis } from "./typography";
 import { LocalStorage } from "@raycast/api";
 import BigNumber from "bignumber.js";
-import { MENU_BAR_ADDRESS_KEY } from "./constants";
+import { ADDRESSES_KEY, MENU_BAR_ADDRESS_KEY } from "./constants";
 import { NormalizedAddress } from "./NormalizedAddress";
 
 export const middleTruncate = ({
@@ -92,12 +92,12 @@ export function sortPositionGroupsByTotalValue(positionGroups?: Record<string, P
 }
 
 export async function getAddresses() {
-  const addressesRaw = await LocalStorage.getItem("addresses");
+  const addressesRaw = await LocalStorage.getItem(ADDRESSES_KEY);
   return JSON.parse((addressesRaw || "[]") as string) as NormalizedAddress[];
 }
 
 export async function setAddresses(addresses: NormalizedAddress[]) {
-  return LocalStorage.setItem("addresses", JSON.stringify(addresses));
+  return LocalStorage.setItem(ADDRESSES_KEY, JSON.stringify(addresses));
 }
 
 export async function addAddress(address: NormalizedAddress) {
