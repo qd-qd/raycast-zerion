@@ -1,4 +1,4 @@
-import { ChainInfo } from "./types";
+import type { ChainInfo } from "./types";
 
 export const ALL_CHAINS = "all";
 export const ZERO_CHAIN_CONFIG: ChainInfo = {
