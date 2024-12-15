@@ -8,7 +8,7 @@ export default function Command(props: LaunchProps) {
   const [account] = useState(props.arguments.account);
   const { isLoading, address } = useWalletMetadata(account);
   if (isLoading) {
-    return <List isLoading={true} filtering={false}></List>;
+    return <List isLoading={true} filtering={false} />;
   }
   if (!address) {
     showToast({ style: Toast.Style.Failure, title: "Incorrect Address or Domain" });
