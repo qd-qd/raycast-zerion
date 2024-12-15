@@ -11,26 +11,26 @@ export default function Command() {
   return (
     <List isLoading={isLoading} searchBarPlaceholder="Filter Wallets">
       {addresses?.length === 0 ? (
-      <List.EmptyView
-        icon={Icon.AddPerson}
-        title="No Saved Wallets. Yet!"
-        description="Search for any wallet and use the 'Save Wallet' command from the action menu"
-      />
-      ) : (
-      addresses?.map((address) => (
-        <AddressLineByAddress
-        key={address}
-        address={address}
-        action={
-          <Action
-          onAction={() => push(<AddressView addressOrDomain={address} />)}
-          title="Go To Wallet"
-          icon={Icon.Eye}
-          />
-        }
-        onChangeSavedStatus={revalidate}
+        <List.EmptyView
+          icon={Icon.AddPerson}
+          title="No Saved Wallets. Yet!"
+          description="Search for any wallet and use the 'Save Wallet' command from the action menu"
         />
-      ))
+      ) : (
+        addresses?.map((address) => (
+          <AddressLineByAddress
+            key={address}
+            address={address}
+            action={
+              <Action
+                onAction={() => push(<AddressView addressOrDomain={address} />)}
+                title="Go To Wallet"
+                icon={Icon.Eye}
+              />
+            }
+            onChangeSavedStatus={revalidate}
+          />
+        ))
       )}
     </List>
   );
