@@ -1,10 +1,10 @@
 import { groupBy } from "lodash";
-import { AggregatedPosition, Position } from "./types";
+import type { AggregatedPosition, Position } from "./types";
 import { ellipsis } from "./typography";
 import { LocalStorage } from "@raycast/api";
 import BigNumber from "bignumber.js";
 import { ADDRESSES_KEY, MENU_BAR_ADDRESS_KEY } from "./constants";
-import { NormalizedAddress } from "./NormalizedAddress";
+import type { NormalizedAddress } from "./NormalizedAddress";
 
 export const middleTruncate = ({
   value,

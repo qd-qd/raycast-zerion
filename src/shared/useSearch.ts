@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useFetch } from "@raycast/utils";
 import { getZpiHeaders, ZPI_URL } from "./api";
-import { SearchResult } from "./types";
+import type { SearchResult } from "./types";
 
 export function useSearch(query?: string) {
   const { data, isLoading } = useFetch<{ data: SearchResult }>(
