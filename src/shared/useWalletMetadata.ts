@@ -1,5 +1,5 @@
 import { useFetch } from "@raycast/utils";
-import { WalletMetadata } from "./types";
+import type { WalletMetadata } from "./types";
 import { useMemo } from "react";
 import { ZPI_URL, getZpiHeaders } from "./api";
 import { normalizeAddress } from "./NormalizedAddress";

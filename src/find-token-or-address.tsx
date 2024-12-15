@@ -1,6 +1,7 @@
-import { Icon, LaunchProps, List, Image, Color, ActionPanel, Action, useNavigation } from "@raycast/api";
+import { Icon, List, Image, Color, ActionPanel, Action, useNavigation } from "@raycast/api";
+import type { LaunchProps } from "@raycast/api";
 import { useState } from "react";
-import { SearchAsset, SearchWallet } from "./shared/types";
+import type { SearchAsset, SearchWallet } from "./shared/types";
 import { useSearch } from "./shared/useSearch";
 import { middleTruncate } from "./shared/utils";
 import { AddressView } from "./components/AddressView";

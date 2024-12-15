@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useFetch } from "@raycast/utils";
 import { getZpiHeaders, ZPI_URL } from "./api";
-import { AddressPortfolio } from "./types";
+import type { AddressPortfolio } from "./types";
 
 export function useWalletPortfolio({ address }: { address?: string }) {
   const { data: addressPortfolio, isLoading } = useFetch<{ data: AddressPortfolio }>(
