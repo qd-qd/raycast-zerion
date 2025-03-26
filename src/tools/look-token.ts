@@ -10,10 +10,9 @@ interface Input {
 }
 
 export default async function (input: Input) {
-  const response = await fetch(
-    `${ZPI_URL}asset/get-fungible-full-info/v1?fungibleId=${input.tokenId}&currency=usd`,
-    { headers: getZpiHeaders() },
-  );
+  const response = await fetch(`${ZPI_URL}asset/get-fungible-full-info/v1?fungibleId=${input.tokenId}&currency=usd`, {
+    headers: getZpiHeaders(),
+  });
   const result = await response.json();
   return result.data;
 }
