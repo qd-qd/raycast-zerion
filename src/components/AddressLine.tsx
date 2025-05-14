@@ -16,13 +16,14 @@ import {
   LaunchType,
 } from "@raycast/api";
 import {
-  addAddress,
-  getAddresses,
-  getMenuBarAddress,
-  middleTruncate,
-  removeAddress,
-  removeMenuBarAddress,
-  setMenuBarAddress,
+	addAddress,
+	getAddresses,
+	getMenuBarAddress,
+	middleTruncate,
+	removeAddress,
+	removeMenuBarAddress,
+	setMenuBarAddress,
+	formatBalance,
 } from "../shared/utils";
 import { useWalletMetadata } from "../shared/useWalletMetadata";
 import { useWalletPortfolio } from "../shared/useWalletPortfolio";
@@ -130,7 +131,7 @@ export function AddressLine({
         ...walletMetadata.identities.slice(1).map((identity) => ({
           tag: { value: identity.handle },
         })),
-        { text: { value: `$${Number(portfolio?.totalValue)?.toFixed(2)}` || "" } },
+        { text: { value: formatBalance(portfolio?.totalValue) } },
         {
           text: {
             value: portfolio?.totalValue

@@ -160,6 +160,15 @@ export function formatWithSignificantValue(value: number) {
   return `${Math.floor(significantValue)}${symbol}`;
 }
 
+export function formatBalance(balance?: string | number | null) {
+  if (balance === undefined || balance === null) return "";
+
+	return `$${Number(balance).toLocaleString(undefined, {
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	})}`;
+}
+
 export async function handleError({ error, title }: { error: unknown; title: string }) {
   return showToast({
     style: Toast.Style.Failure,
