@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { AggregatedPosition, Position } from "../shared/types";
 import {
   DEFAULT_DAPP_ID,
+  formatBalance,
   getFullPositionsValue,
   getPositionBalance,
   getPositionValue,
@@ -54,7 +55,7 @@ function PositionsGroup({
                   value: `${getPositionBalance(item).toFixed(2)} ${item.asset.symbol}`,
                 },
               },
-              { text: { value: `$${Number(item.value)?.toFixed(2)}` || "", color: Color.PrimaryText } },
+			  { text: { value: formatBalance(item.value), color: Color.PrimaryText  } },
               {
                 text: {
                   value: item.value
